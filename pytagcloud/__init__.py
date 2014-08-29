@@ -126,13 +126,11 @@ def make_tags(wordcounts, minsize=3, maxsize=36, colors=None, scalef=defscale):
     mincount = min(counts)
     tags = []
     for word_count in wordcounts:
-        sentiment_rgb = int(((sentiment(word_count[0])["Sentiment"])*210)+10)
+        sentiment_rgb = int((sentiment(word_count[0])["Sentiment"])*220)
         if sentiment_rgb < 0:
             sentiment_rgb = sentiment_rgb*-1
         elif sentiment_rgb > 220:
             sentiment_rgb = 220
-        elif sentiment_rgb < 10:
-            sentiment_rgb = 10
         color = (sentiment_rgb, sentiment_rgb, sentiment_rgb)
         tags.append({'color': color, 'size': scalef(word_count[1], mincount,
                                                     maxcount, minsize, maxsize),
