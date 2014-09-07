@@ -115,7 +115,7 @@ def make_tags(wordcounts, minsize=3, maxsize=36, colors=None, scalef=defscale):
     word appears in a text)
     the tags are assigned sizes between minsize and maxsize, the function used
     is determined by scalef (default: square root)
-    color is either chosen from colors (list of rgb tuples) if provided or random
+    color is determined by indicoio's sentiment analysis api
     """
     counts = [tag[1] for tag in wordcounts]
     
